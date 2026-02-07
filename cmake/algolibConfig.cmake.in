@@ -1,5 +1,5 @@
 @PACKAGE_INIT@
 include("${CMAKE_CURRENT_LIST_DIR}/algolibTargets.cmake")
 
-# Проверка что библиотека корректно загрузилась
+// Проверка что библиотека корректно загрузилась
 check_required_components(algolib)

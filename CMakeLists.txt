@@ -8,6 +8,12 @@ project(algolib
 
 add_library(algolib INTERFACE)
 
+target_sources(algolib
+        INTERFACE
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/algolib/sort/selection_sort.h>
+        $<INSTALL_INTERFACE:include/algolib/sort/selection_sort.h>
+)
+
 target_include_directories(algolib
         INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -65,3 +71,10 @@ install(
         "${CMAKE_CURRENT_BINARY_DIR}/algolibConfigVersion.cmake" # Файл версии
         DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/algolib
 )
+
+option(ALGOLIB_BUILD_TESTS "Build tests" ON)
+
+if(ALGOLIB_BUILD_TESTS)
+    enable_testing()
+    add_subdirectory(tests)
+endif()
