@@ -12,6 +12,8 @@ target_sources(algolib
         INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/algolib/sort/selection_sort.h>
         $<INSTALL_INTERFACE:include/algolib/sort/selection_sort.h>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/algolib/algolib.h>
+        $<INSTALL_INTERFACE:include/algolib/algolib.h>
 )
 
 target_include_directories(algolib
